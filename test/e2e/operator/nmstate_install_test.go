@@ -96,7 +96,7 @@ func installOperator(operator operatorTestData) error {
 	Expect(err).ToNot(HaveOccurred())
 
 	manifestsDir := "build/_output/manifests/"
-	manifests := []string{"namespace.yaml", "service_account.yaml", "operator.yaml", "role.yaml", "role_binding.yaml"}
+	manifests := []string{"namespace.yaml", "service_account.yaml", "operator.yaml", "role.yaml", "role_binding.yaml", "scc.yaml"}
 	for _, manifest := range manifests {
 		_, err = cmd.Kubectl("apply", "-f", manifestsDir+manifest)
 		Expect(err).ToNot(HaveOccurred())
